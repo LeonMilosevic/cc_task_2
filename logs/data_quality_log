@@ -1,0 +1,12 @@
+03/13/2022 02:31:52 PM - quality_check.py - Total values remove due to missing values in ['id', 'brand_id']: 0
+03/13/2022 02:31:52 PM - quality_check.py - Count of duplicate records: 94
+03/13/2022 02:31:53 PM - quality_check.py - Total count of out of date range removed in created_at is: 0
+03/13/2022 02:31:53 PM - quality_check.py - Total values remove due to missing values in ['id', 'brand_id']: 0
+03/13/2022 02:31:53 PM - quality_check.py - Count of duplicate records: 6926
+03/13/2022 02:31:54 PM - quality_check.py - Total count of out of date range removed in updated_at is: 0
+03/13/2022 02:42:48 PM - quality_check.py - Total values remove due to missing values in ['id', 'brand_id']: 0
+03/13/2022 02:42:48 PM - quality_check.py - Count of duplicate records: 94
+03/13/2022 02:42:49 PM - quality_check.py - Total count of out of date range removed in created_at is: 0
+03/13/2022 02:42:49 PM - quality_check.py - Total values remove due to missing values in ['id', 'brand_id']: 0
+03/13/2022 02:42:49 PM - quality_check.py - Count of duplicate records: 6926
+03/13/2022 02:42:50 PM - quality_check.py - Total count of out of date range removed in updated_at is: 0
