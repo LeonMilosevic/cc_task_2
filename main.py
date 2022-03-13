@@ -29,11 +29,7 @@ def app():
     df_final = transform(df_1, df_2)
 
     # data load
-
-
-
-    # goal: aggregate 2 json files into 1. contain all ticket comments, latest tags, and latest ticket status.
-
+    df_final.to_csv(os.path.join(f'{CWD}/storage', f'grouped_tickets'), index=False)
 
 
 if __name__ == '__main__':
