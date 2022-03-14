@@ -65,4 +65,4 @@ def transform(df_1: pd.DataFrame, df_2: pd.DataFrame) -> pd.DataFrame:
 
     x_2 = keep_latest_ticket_by_date(x_2, aggregates)
 
-    return pd.merge(x_1[columns_to_keep], x_2, how="left", on="id")
+    return pd.merge(x_1[columns_to_keep], x_2, how="left", on="id")  # how="left", assuming ticket can't be updated if not created.
