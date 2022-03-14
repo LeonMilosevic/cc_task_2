@@ -29,11 +29,29 @@ def difference(df_1: pd.DataFrame, df_2: pd.DataFrame) -> int:
 
 
 def keep_latest_ticket_by_date(df: pd.DataFrame, aggregates: dict) -> pd.DataFrame:
+    """Keeps the latest ticket for a given day, appends comments together from all the tickets.
+
+    Args:
+        df (pd.DataFrame)
+        aggregates (dict): dictionary containing column names and functions to apply on each.
+
+    Returns:
+        pd.DataFrame: Latest tickets by day with appended list of comments.
+    """
     x = df.copy()
     return x.sort_values('updated_at').groupby(['id', 'brand_id']).agg(aggregates).reset_index()
 
 
 def transform(df_1: pd.DataFrame, df_2: pd.DataFrame) -> pd.DataFrame:
+    """Wrapper function that calls multiple transformation functions.
+
+    Args:
+        df_1 (pd.DataFrame)
+        df_2 (pd.DataFrame)
+
+    Returns:
+        x (pd.DataFrame): Merged and concatenated dataframe with the latest tickets.
+    """
     columns_to_keep = ['id', 'created_at', 'email', 'subject']
     aggregates = {'status': 'last',
                   'tags': 'last',
@@ -46,7 +64,5 @@ def transform(df_1: pd.DataFrame, df_2: pd.DataFrame) -> pd.DataFrame:
     x_2 = df_2.copy()
 
     x_2 = keep_latest_ticket_by_date(x_2, aggregates)
-    x_merge = pd.merge(x_2, x_1[columns_to_keep], how="left", on="id")
-    x_final = pd.concat([x_merge, x_1], ignore_index=True)
 
-    return x_final
+    return pd.merge(x_1[columns_to_keep], x_2, how="left", on="id")

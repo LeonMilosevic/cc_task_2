@@ -1,10 +1,13 @@
 import datetime as dt
+
+from typing import List
+
 from helpers.helper_functions import difference, implode
 import pandas as pd
 import logging
 
 
-def remove_null(df: pd.DataFrame, by_column: list) -> pd.DataFrame:
+def remove_null(df: pd.DataFrame, by_column: List[str]) -> pd.DataFrame:
     """Remove rows if null value is present in by_column argument.
 
     Args:
